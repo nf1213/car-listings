@@ -1,0 +1,10 @@
+<h1>ALL THE CARS</h1>
+<a href="<%= root_path %>"><h4>Go back</h4></a>
+
+<% if @manufacturer %>
+  <%= link_to 'New Car', new_manufacturer_car_path(@manufacturer.id) %>
+  <% @manufacturer.cars.all.each do |car| %>
+    <p><%= car.color %> <%= car.year %> <%= car.manufacturer.name %>,
+      <%= car.mileage %> miles. <%= car.description %></p>
+  <% end %>
+<% end %>

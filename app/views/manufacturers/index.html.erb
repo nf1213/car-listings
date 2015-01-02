@@ -1,5 +1,7 @@
 <h1>ALL THE MANUFACTURERS</h1>
 
+<%= link_to 'New Manufacturer', new_manufacturer_path %>
+
 <% @manufacturers.each do |manufacturer| %>
-  <p><%= manufacturer.name %>: <%= manufacturer.country_name %></p>
+  <a href="<%= manufacturer_cars_path(manufacturer.id) %>"><p><%= manufacturer.name %>: <%= manufacturer.country_name %></p></a>
 <% end %>
